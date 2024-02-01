@@ -1,4 +1,5 @@
 import requests
+import json
 
 def getParams(city):
     return {
@@ -7,5 +8,10 @@ def getParams(city):
     'days': "1"
     }
 def getWeather(city):
-    response = requests.get("https://api.weatherapi.com/v1/forecast.json", params=getParams(city))
-    return response.json()['current']['temp_c'], response.json()['current']['temp_f'], response.json()['current']['last_updated']
+    jsonDict = {}
+    response = requests.get("https://api.weatherapi.com/v1/forecast.json", params=getParams(city)).json()['current']
+    jsonDict['Temperature celsius'] = response['temp_c']
+    jsonDict['Temperature fahrenheit'] = response['temp_f']
+    jsonDict['Last update'] = response['last_updated']
+
+    return jsonDict

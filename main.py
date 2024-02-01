@@ -10,3 +10,4 @@ def index():
 @app.get("/weather-{city}")
 def weather(city):
     return getWeather(city)
+    

@@ -7,5 +7,5 @@ def getParams(city):
     'days': "1"
     }
 def getWeather(city):
-    reponse = requests.get("https://api.weatherapi.com/v1/forecast.json", params=getParams(city))
-    return reponse.json()['current']['temp_c']
+    response = requests.get("https://api.weatherapi.com/v1/forecast.json", params=getParams(city))
+    return response.json()['current']['temp_c'], response.json()['current']['temp_f'], response.json()['current']['last_updated']

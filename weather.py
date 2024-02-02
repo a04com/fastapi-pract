@@ -26,4 +26,4 @@ def getForecast(city: str, days: int):
         weatherForecast[("Forecast for day {0}").format(i + 1)] = tempDict.items()
 
     return weatherForecast
-    # return response.json()['forecast']['forecastday'][0]
+    # return response.json()['forecast']['forecastday'][0]  

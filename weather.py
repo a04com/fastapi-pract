@@ -1,4 +1,4 @@
-import requests, json
+import requests
 
 key = r"804c97b061374c55b9583509240102"
 
